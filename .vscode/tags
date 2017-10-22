@@ -1,0 +1,22 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+CODED	../tests/test_morselate.py	/^CODED = '- .... . \/ --.- ..- .. -.-. -.- \/ -... .-. --- .-- -. \/ ..-. --- -..- \/ .--- ..- -- .--. ... \/ --- ...- . .-. \/ - .... . \/ .-.. .- --.. -.-- \/ -.. --- --.'$/;"	kind:variable	line:4
+DECODED	../tests/test_morselate.py	/^DECODED = 'THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG'$/;"	kind:variable	line:5
+MORSECODES	../morselate/morselate.py	/^MORSECODES = {$/;"	kind:variable	line:5
+__init__.py	../morselate/__init__.py	1;"	kind:file	line:1
+__main__.py	../morselate/__main__.py	1;"	kind:file	line:1
+app	../morser/manager.py	/^app = flas(__name__)$/;"	kind:variable	line:3
+demorse	../morselate/morselate.py	/^def demorse(morse):$/;"	kind:function	line:61
+emorse	../morselate/morselate.py	/^def emorse(text):$/;"	kind:function	line:65
+manager.py	../morser/manager.py	1;"	kind:file	line:1
+morselate.py	../morselate/morselate.py	1;"	kind:file	line:1
+read	../setup.py	/^def read(fname):$/;"	kind:function	line:4
+reducer	../morselate/morselate.py	/^def reducer(source, keydict, joiner=''):$/;"	kind:function	line:74
+setup.py	../setup.py	1;"	kind:file	line:1
+test_decoding	../tests/test_morselate.py	/^def test_decoding():$/;"	kind:function	line:7
+test_encoding	../tests/test_morselate.py	/^def test_encoding():$/;"	kind:function	line:10
+test_morselate.py	../tests/test_morselate.py	1;"	kind:file	line:1
