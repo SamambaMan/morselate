@@ -1,62 +1,68 @@
 <!doctype html>
 <html>
-    <head>
-        <title>Yet another morse encoder/decoder</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-    </head>
-    <body>
-        <div class="container-fluid col-md-6">
+
+<head>
+    <title>Yet another morse encoder/decoder</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+        crossorigin="anonymous">
+    <meta name="description" content="Translate your duper secret morse code messages">
+    <meta name="author" content="Felipe Ferreira - Samambaman">
+</head>
+
+<body>
+    <div class="container">
+        <form class="form">
             <div class="form-group">
-                <label for="message">Your message</label>
+                <h3><label for="message">Your message</label></h3>
                 <textarea class="form-control" id="message" name="message" rows="3"></textarea>
             </div>
-            <div class="form-group centered">
-                <button type="button" class="btn btn-primary" id="btnDecode">Decode</button>
+            <div class="form-group">
+                <button type="button" class="btn btn-primary btn-large" id="btnDecode">Decode</button>
                 <button type="button" class="btn btn-primary" id="btnEncode">Encode</button>
             </div>
             <div class="form-group">
-                <label for="message">Your message</label>
+                <h3><label for="response">Translated</label></h3>
                 <textarea class="form-control" id="response" name="response" rows="5" readonly></textarea>
             </div>
             <div class="form-group">
-                <a href="https://github.com/SamambaMan/morselate" 
-                class="btn btn-outline-success"
-                target="blank">https://github.com/SamambaMan/morselate</a>
+                <a href="https://github.com/SamambaMan/morselate" class="btn btn-outline-success" target="blank">https://github.com/SamambaMan/morselate</a>
             </div>
             <div class="form-group">
                 <textarea class="form-control" id="response" name="response" rows="5" readonly>
 {% for chave in codes %}( {{codes[chave]}} -> "{{chave}}" )  {% endfor %}
                 </textarea>
-                
             </div>
-        </div>
+        </form>
+    </div>
 
-        <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-        <script type="text/javascript">
-        
-            function encode() {
-                transfer("encode");
-            }
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        function encode() {
+            transfer("encode");
+        }
 
-            function decode() {
-                transfer("decode");
-            }
+        function decode() {
+            transfer("decode");
+        }
 
-            function transfer(action) {
-                var mensagem = $("#message").val().replace(/\//g, '!');
-                jQuery.get(action + "/" + encodeURI(mensagem),
-                    function(data) {
-                        $("#response").val(data);
-                    });
-            }
+        function transfer(action) {
+            var mensagem = $("#message").val().replace(/\//g, '!');
+            jQuery.get(action + "/" + encodeURI(mensagem),
+                function (data) {
+                    $("#response").val(data);
+                });
+        }
 
-            $(document).ready(function() {
-                $("#btnEncode").click(encode);
-                $("#btnDecode").click(decode);
-            })
+        $(document).ready(function () {
+            $("#btnEncode").click(encode);
+            $("#btnDecode").click(decode);
+        })
+    </script>
+</body>
 
-        </script>
-    </body>
 </html>
